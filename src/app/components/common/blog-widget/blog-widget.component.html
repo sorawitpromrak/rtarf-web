@@ -1,0 +1,57 @@
+<aside class="widget-area">
+    <div class="widget widget_search">
+        <h3 class="widget-title"><span>ค้นหา</span></h3>
+        <form class="search-form">
+            <input type="search" class="search-field" placeholder="Search...">
+            <button type="submit"><i class='bx bx-search-alt'></i></button>
+        </form>
+    </div>
+    <div class="widget widget_categories">
+        <h3 class="widget-title"><span>หมวดหมู่</span></h3>
+        <ul>
+            <li *ngFor="let content of catdata;">
+                <a routerLink="/news/{{content.name}}/1/{{content.show}}">
+                    {{content.show}} <span class="count"></span>
+                </a>
+            </li> 
+        </ul>
+    </div>
+    <div class="widget widget_toledo_posts_thumb">
+        <h3 class="widget-title"><span>ข่าวกิจกรรมล่าสุด</span></h3>
+        <article class="item"  *ngFor="let content of newsdata;">
+            <a routerLink="/blog-details" class="thumb">
+                <img [src]=content.imageurl alt="{{content.title}}">
+            </a>
+            <div class="info">
+                <h4 class="title">
+                    <a routerLink="/news-details/{{content.id}}/{{content.title}}">
+                        {{content.title}}
+                    </a>
+                </h4>
+                <span class="date">{{content.newsdatetime}}</span>
+            </div>
+        </article> 
+    </div>
+    <div class="widget widget_follow_us">
+        <h3 class="widget-title"><span>ติดตามผ่านสื่อสังคมออนไลน์</span></h3>
+        <ul>
+            <li><a href="https://www.facebook.com/rtarfhq.pr" target="_blank">Facebook</a></li>
+            <li><a href="https://twitter.com/RTARF_PR" target="_blank">Twitter</a></li>
+            <li><a href="https://www.instagram.com/rtarf.pr/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@user-bh4mu3sd8z/videos" target="_blank">Youtube</a></li>
+            <li><a href="https://www.tiktok.com/@rtarf.pr" target="_blank">Tiktok</a></li>
+        </ul>
+    </div>
+    <div class="widget widget_tag_cloud">
+        <h3 class="widget-title"><span>แท็กคำสำคัญ</span></h3>
+        <div class="tagcloud">
+            <a routerLink="/">Advertisment</a>
+            <a routerLink="/">Business</a>
+            <a routerLink="/">Life</a>
+            <a routerLink="/">Lifestyle</a>
+            <a routerLink="/">Fashion</a> 
+            <a routerLink="/">Advertisment</a>
+            <a routerLink="/">Business</a>
+        </div>
+    </div>
+</aside> 

@@ -1,0 +1,75 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/bg/bg1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1 style="color:white;" [innerHtml]=categoryname></h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+                <li class="d-inline-block position-relative" [innerHtml]=categoryname></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Grid -->
+<div class="blog-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-6" *ngFor="let content of newsdata;">
+                        <div class="blog-card">
+                            <div class="image">
+                                <a routerLink="/news-details/{{content.id}}/{{content.title}}" class="d-block">
+                                    <img src="{{content.imageurl}}" alt="{{content.title}}">  
+                                </a>
+                            </div>
+                            <div class="content">
+                                <h3>
+                                    <a routerLink="/news-details/{{content.id}}/{{content.title}}">
+                                        {{content.title}}
+                                    </a>
+                                </h3>
+                                <p>{{content.shortdetail}}</p>
+
+                                <ul class="meta ps-0 list-unstyled">
+                                    <li class="d-inline-block position-relative">
+                                        <i class='bx bx-user'></i>
+                                        โดย {{content.by}}
+                                    </li>
+                                    <li class="d-inline-block position-relative">
+                                        <i class='bx bx-calendar'></i>
+                                        {{content.newsdatetime}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6"></div> 
+                </div>
+                <nav class="pagination-area text-center">
+                    <ul class="pagination mb-0 list-unstyled ps-0 d-block border-0 rounded-0">
+                        <li class="page-item disabled"><a class="page-link" routerLink="/">
+                            <i class="flaticon-left-arrow"></i>
+                        </a></li>
+                        <li class="page-item"><a class="page-link active" routerLink="/">1</a></li> 
+                        <li class="page-item"><a class="page-link" routerLink="/">
+                            <i class="flaticon-next"></i>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <aside class="widget-area">
+                    <app-blog-widget></app-blog-widget>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>

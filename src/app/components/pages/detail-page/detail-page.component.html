@@ -1,0 +1,28 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/bg/bg1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1 style="color: white;" [innerHTML]=pageshow>กำลังเรียกข้อมูล</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+                <li class="d-inline-block position-relative"  [innerHTML]=pageshow>กำลังเรียกข้อมูล</li>
+                <!--<p>ปรับปรุงล่าสุด February 3, 2023</p> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Privacy Policy -->
+<div class="privacy-policy-area ptb-100">
+    <div class="container">
+        <div class="privacy-policy-content"> 
+            <div [innerHTML]=pagedetail>กำลังเรียกข้อมูล</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/bg/bg1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1 style="color: white;" *ngIf="pagename=='who-we-are'">เราคือใคร?</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='for-people'">บริการสำหรับประชาชน</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">บริการสำหรับประชาชน</h1> 
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+                <li class="d-inline-block position-relative" *ngIf="pagename=='who-we-are'">เราคือใคร?</li>
+                <li class="d-inline-block position-relative" *ngIf="pagename=='for-people'">บริการสำหรับประชาชน</li>
+                <li class="d-inline-block position-relative" *ngIf="pagename=='who-soldiers'">บริการสำหรับทหาร</li>
+            </ul>
+        </div>
+    </div>
+</div> 
+<app-features></app-features>

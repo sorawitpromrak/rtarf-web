@@ -1,0 +1,51 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/bg/bg1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1 style="color:white">รายละเอียดข่าวกิจกรรม</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+                <li class="d-inline-block position-relative">รายละเอียดข่าวกิจกรรม</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Details -->
+<div class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc" *ngFor="let content of newsdata;">
+                    <div class="post-thumb">
+                        <img src="{{content.imageurl}}" alt="{{content.title}}">
+                    </div>
+                    <h3>{{content.title}}</h3>
+                    <div class="post-meta">
+                        <ul class="ps-0 list-unstyled mb-0">
+                            <li class="d-inline-block position-relative">
+                                <i class='bx bx-user'></i>
+                                โดย {{content.by}}
+                            </li>
+                            <li class="d-inline-block position-relative">
+                                <i class='bx bx-calendar'></i>
+                                {{content.newsdatetime}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div [innerHtml]=content.detail></div>
+                      
+                </div> 
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-blog-widget></app-blog-widget>
+            </div>
+        </div>
+    </div>
+</div>

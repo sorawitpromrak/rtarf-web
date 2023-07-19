@@ -1,0 +1,35 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/bg/bg1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1 style="color: white;">คำถามบ่อย (FAQ)</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+                <li class="d-inline-block position-relative">คำถามบ่อย (FAQ)</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-area ptb-100">
+    <div class="container">
+        <div class="faq-content">
+            <div class="faq-item" *ngFor="let item of pagedata; let i = index;">
+                <div class="faq-header" (click)="toggleAccordionItem(item)">
+                    {{item.question}}
+                    <i class='bx' [ngClass]="{'bx-chevron-down': !item.open, 'bx-chevron-up': item.open}"></i>
+                </div>
+                <div class="faq-content" [hidden]="!item.open" [innerHtml]=item.answer>
+                    <p>-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

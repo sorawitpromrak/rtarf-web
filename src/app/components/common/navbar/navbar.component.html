@@ -1,0 +1,566 @@
+<div class="navbar-area" [ngClass]="{'sticky': isSticky}">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg" [class.active]="classApplied">
+            <a class="navbar-brand" routerLink="/index" style="max-width: 350px;">
+                <img src="assets/imgs/logoname.png" alt="rtarf logo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse"> 
+                <ul class="navbar-nav">
+                    
+                    <li class="nav-item">
+                        <a routerLink="/index" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            เกี่ยวกับเรา
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/page/present-commander" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ผู้บังคับบัญชาปัจจุบัน
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/commander-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    นโยบายผู้บังคับบัญชา
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/history" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ประวัติความเป็นมา
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/agency" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    หน่วยงานขึ้นตรง
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/about-us" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    เกี่ยวกับกองบัญชาการกองทัพไทย
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/structure" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    โครงสร้างกองทัพไทย
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a routerLink="/page/all-commander" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ทำเนียบผู้บังคับบัญชา
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/emblem" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ตราประจำหน่วย
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/vision" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    วิสัยทัศน์ ภารกิจ พันธกิจ
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/function" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    อำนาจหน้าที่
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/popularity" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ค่านิยม/ค่านิยมหลัก
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/action-plan" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    แผนปฏิบัติราชการ
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/cio-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    นโยบาย CIO
+                                </a>
+                            </li> 
+                        </ul>
+                    </li> 
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        บริการประชาชน
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/service/list/doc/บริการแบบฟอร์ม" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    บริการแบบฟอร์ม
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ศูนย์บริการแบบเบ็ดเสร็จ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ศูนย์ข้อมูลข่าวสาร
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    รับเรื่องร้องเรียนร้องทุกข์
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/service/list/apply/ประกาศรับสมัคร" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ประกาศรับสมัคร
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    แบบสอบถามความพึงพอใจ
+                                </a>
+                            </li> 
+                        </ul>
+                    </li> 
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            บริการข้อมูล
+                        </a>
+                        <ul class="dropdown-menu"> 
+                            
+                            <li class="nav-item">
+                                <a routerLink="/service/list/announcement/ข่าวประกาศ คำสั่ง" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ข่าว ประกาศ คำสั่ง
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    ภารกิจกองบัญชาการกองทัพไทย
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/news/commander/1/ภารกิจผู้บัญชาการ" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ภารกิจผู้บัญชาการ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/news/activity/1/กิจกรรมหน่วยงาน" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            กิจกรรมหน่วยงาน
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/news/people/1/ช่วยเหลือประชาชน" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ช่วยเหลือประชาชน
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    เอกสารเผยแพร่
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/budget/ประกาศจัดซื้อจัดจ้าง" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ประกาศจัดซื้อจัดจ้าง
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            คำรับรองการปฏิบัติราชการ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/budgetreport/งบประมาณรายจ่ายประจำปี" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            งบประมาณรายจ่ายประจำปี
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/annualreport/รายงานประจำปีงบประมาณ" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            รายงานประจำปีงบประมาณ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานภาครัฐ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    คลังข้อมูล
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            วารสารกองทัพไทย
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            บริการข้อมูลแผนที่
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ท่องเที่ยวในเขตพื้นที่ทหาร
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/knowledge/ความรู้เกี่ยวกับทหาร" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ความรู้เกี่ยวข้องกับทหาร
+                                        </a>
+                                    </li> 
+                                </ul>
+                            </li>
+ 
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    สื่อสังคมออนไลน์
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            RTARF Radio
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.facebook.com/rtarfhq.pr" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Facebook
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.youtube.com/@user-bh4mu3sd8z/videos" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Youtube
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://twitter.com/RTARF_PR" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Twitter
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.instagram.com/rtarf.pr/" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Instragram
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.tiktok.com/@rtarf.pr" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Tiktok
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            ติดต่อเรา
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                                    คำถามบ่อย (FAQ)
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                                    ติดต่อกองบัญชาการกองทัพไทย
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+
+                <ul class="navbar-nav for-responsive"> 
+                    
+                    <li class="nav-item">
+                        <a routerLink="/index" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            หน้าแรก
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            เกี่ยวกับเรา
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/page/present-commander" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ผู้บังคับบัญชาปัจจุบัน
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/commander-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    นโยบายผู้บังคับบัญชา
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/history" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ประวัติความเป็นมา
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/agency" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    หน่วยงานขึ้นตรง
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/about-us" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    เกี่ยวกับกองบัญชาการกองทัพไทย
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/structure" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    โครงสร้างกองทัพไทย
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a routerLink="/page/all-commander" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ทำเนียบผู้บังคับบัญชา
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/emblem" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ตราประจำหน่วย
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/vision" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    วิสัยทัศน์ ภารกิจ พันธกิจ
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/function" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    อำนาจหน้าที่
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/popularity" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ค่านิยม/ค่านิยมหลัก
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/page/action-plan" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    แผนปฏิบัติราชการ
+                                </a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a routerLink="/page/cio-policy" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    นโยบาย CIO
+                                </a>
+                            </li> 
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                        บริการประชาชน
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/service/list/doc/บริการแบบฟอร์ม" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    บริการแบบฟอร์ม
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ศูนย์บริการแบบเบ็ดเสร็จ
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ศูนย์ข้อมูลข่าวสาร
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    รับเรื่องร้องเรียนร้องทุกข์
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/service/list/apply/ประกาศรับสมัคร" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ประกาศรับสมัคร
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    แบบสอบถามความพึงพอใจ
+                                </a>
+                            </li> 
+                        </ul>
+                    </li> 
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            บริการข้อมูล
+                        </a>
+                        <ul class="dropdown-menu"> 
+                            
+                            <li class="nav-item">
+                                <a routerLink="/service/list/announcement/ข่าวประกาศ คำสั่ง" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                    ข่าว ประกาศ คำสั่ง
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    ภารกิจกองบัญชาการกองทัพไทย
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/news/commander/1/ภารกิจผู้บัญชาการ" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ภารกิจผู้บัญชาการ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/news/activity/1/กิจกรรมหน่วยงาน" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            กิจกรรมหน่วยงาน
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/news/people/1/ช่วยเหลือประชาชน" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ช่วยเหลือประชาชน
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    เอกสารเผยแพร่
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/budget/ประกาศจัดซื้อจัดจ้าง" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ประกาศจัดซื้อจัดจ้าง
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            คำรับรองการปฏิบัติราชการ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/budgetreport/งบประมาณรายจ่ายประจำปี" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            งบประมาณรายจ่ายประจำปี
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/annualreport/รายงานประจำปีงบประมาณ" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            รายงานประจำปีงบประมาณ
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            การประเมินคุณธรรมและความโปร่งใสในการดำเนินงานภาครัฐ
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    คลังข้อมูล
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            วารสารกองทัพไทย
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            บริการข้อมูลแผนที่
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ท่องเที่ยวในเขตพื้นที่ทหาร
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a routerLink="/service/list/knowledge/ความรู้เกี่ยวกับทหาร" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            ความรู้เกี่ยวข้องกับทหาร
+                                        </a>
+                                    </li> 
+                                </ul>
+                            </li>
+ 
+                            <li class="nav-item">
+                                <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                                    สื่อสังคมออนไลน์
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav-item">
+                                        <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            RTARF Radio
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.facebook.com/rtarfhq.pr" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Facebook
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.youtube.com/@user-bh4mu3sd8z/videos" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Youtube
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://twitter.com/RTARF_PR" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Twitter
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.instagram.com/rtarf.pr/" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Instragram
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="https://www.tiktok.com/@rtarf.pr" target="_blank" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                                            Tiktok
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li> 
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="dropdown-toggle nav-link">
+                            ติดต่อเรา
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a routerLink="/faq" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                                    คำถามบ่อย (FAQ)
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                                    ติดต่อกองบัญชาการกองทัพไทย
+                                </a>
+                            </li>
+                        </ul>
+                    </li> 
+                </ul>
+                <div class="others-option d-flex align-items-center"> 
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>

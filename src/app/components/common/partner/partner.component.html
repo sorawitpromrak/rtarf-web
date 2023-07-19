@@ -1,0 +1,125 @@
+<div
+    class="partner-area bg-f7f7f7 pt-100 pb-75"
+    [ngClass]="{'d-none': router.url === '/index-3'}"
+>
+    <div class="container">
+         <div class="row align-items-center">
+            <div class="col-lg-3 col-md-12">
+                <div class="partner-content">
+                    <h4 class="mb-0">บริการประชาชน</h4>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-md-3" *ngFor="let item of serviceData"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                            background-image: url({{item.imageurl}});
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                <a href="{{item.url}}" target="_blank" *ngIf="item.external=='1'" style="color: white;">{{item.title}}</a>
+                                <a routerLink="{{item.url}}" *ngIf="item.external=='0'" style="color: white;">{{item.title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                จัดซื้อจัดจ้าง
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                บริการแบบฟอร์ม
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                แจ้งเรื่องร้องเรียน
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                ศูนย์ข้อมูลข่าวสาร
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                RTARF Mail
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3"> 
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                RTARF Drive
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+         </div>
+    </div>
+</div> 
