@@ -23,16 +23,14 @@ export class DetailPageComponent implements OnInit {
   }
 
   callData(pagename:any){
-    this.ApiService.getpageDetail(pagename).subscribe((results:any)=>{
-      console.log(results);
-      if(results.resultnum>0){
-        this.pagedata=results.results[0]
-        console.log(this.pagedata)
-        this.pageshow=this.pagedata.show
-        this.pagedetail=this.pagedata.detail
-      } else { 
-        this.pageshow='ขออภัย ไม่พบข้อมูล'
-        this.pagedetail='ขออภัย ไม่พบข้อมูล'
+    this.ApiService.getpageDetail(pagename).subscribe((results:any)=>{ 
+      if(results.data.length>0){
+        this.pagedata=results.data[0] 
+        this.pageshow=this.pagedata.attributes.show
+        this.pagedetail=this.pagedata.attributes.detail
+      }else{
+        this.pageshow='ไม่พบข้อมูล'
+        this.pagedetail='ไม่พบข้อมูล'
       }
     })
   }

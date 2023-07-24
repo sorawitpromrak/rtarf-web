@@ -22,25 +22,24 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-12">
-                <div class="blog-details-desc" *ngFor="let content of newsdata;">
+                <div class="blog-details-desc">
                     <div class="post-thumb">
-                        <img src="{{content.imageurl}}" alt="{{content.title}}">
+                        <img src="{{content?.attributes.imageurl}}" alt="{{content?.attributes.title}}">
                     </div>
-                    <h3>{{content.title}}</h3>
+                    <h3>{{content?.attributes.title}}</h3>
                     <div class="post-meta">
                         <ul class="ps-0 list-unstyled mb-0">
                             <li class="d-inline-block position-relative">
                                 <i class='bx bx-user'></i>
-                                โดย {{content.by}}
+                                โดย {{content?.attributes.by}}
                             </li>
                             <li class="d-inline-block position-relative">
                                 <i class='bx bx-calendar'></i>
-                                {{content.newsdatetime}}
+                                {{content?.attributes.newsdatetime}}
                             </li>
                         </ul>
                     </div>
-                    <div [innerHtml]=content.detail></div>
-                      
+                    <div [innerHtml]=content?.attributes.detail></div>
                 </div> 
             </div>
             <div class="col-lg-4 col-md-12">

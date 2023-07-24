@@ -26,26 +26,26 @@
                     <div class="col-lg-6 col-md-6" *ngFor="let content of newsdata;">
                         <div class="blog-card">
                             <div class="image">
-                                <a routerLink="/news-details/{{content.id}}/{{content.title}}" class="d-block">
-                                    <img src="{{content.imageurl}}" alt="{{content.title}}">  
+                                <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="d-block">
+                                    <img src="{{content.attributes.imageurl}}" alt="{{content.attributes.title}}">  
                                 </a>
                             </div>
                             <div class="content">
                                 <h3>
-                                    <a routerLink="/news-details/{{content.id}}/{{content.title}}">
-                                        {{content.title}}
+                                    <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}">
+                                        {{content.attributes.title}}
                                     </a>
                                 </h3>
-                                <p>{{content.shortdetail}}</p>
+                                <p>{{content.attributes.shortdetail}}</p>
 
                                 <ul class="meta ps-0 list-unstyled">
                                     <li class="d-inline-block position-relative">
                                         <i class='bx bx-user'></i>
-                                        โดย {{content.by}}
+                                        โดย {{content.attributes.by}}
                                     </li>
                                     <li class="d-inline-block position-relative">
                                         <i class='bx bx-calendar'></i>
-                                        {{content.newsdatetime}}
+                                        {{content.attributes.newsdatetime}}
                                     </li>
                                 </ul>
                             </div>

@@ -20,11 +20,10 @@ export class BlogComponent {
 
     callData(cat:any){
         this.newsdata=[];
-        this.ApiService.getNews(cat).subscribe((results:any)=>{
-        console.log(results);
-            if(results.resultnum>0){
-                this.newsdata=results.results;
-            }
+        this.ApiService.getNews(cat).subscribe((results:any)=>{ 
+            //console.log(results.data)
+            this.newsdata=results.data; 
+            console.log(this.newsdata);
         })
       }
 

@@ -23,10 +23,10 @@
         <div class="faq-content">
             <div class="faq-item" *ngFor="let item of pagedata; let i = index;">
                 <div class="faq-header" (click)="toggleAccordionItem(item)">
-                    {{item.question}}
+                    {{item.attributes.question}}
                     <i class='bx' [ngClass]="{'bx-chevron-down': !item.open, 'bx-chevron-up': item.open}"></i>
                 </div>
-                <div class="faq-content" [hidden]="!item.open" [innerHtml]=item.answer>
+                <div class="faq-content" [hidden]="!item.open" [innerHtml]=item.attributes.answer>
                     <p>-</p>
                 </div>
             </div>

@@ -38,20 +38,16 @@ export class CoursesComponent {
     callData(){
         this.newsData=[];
         this.ApiService.getActivity().subscribe((results:any)=>{
-        console.log(results);
-            if(results.resultnum>0){
-                this.newsData=results.results;
-            }
+            console.log(results);
+            this.newsData=results.data; 
         })
     }
     
     callDoc(){
         this.docsData=[];
         this.ApiService.getDocs().subscribe((results:any)=>{
-        console.log(results);
-            if(results.resultnum>0){
-                this.docsData=results.results;
-            }
+            console.log(results);
+            this.docsData=results.data;
         })
     }
 }

@@ -11,16 +11,21 @@ export class BlogWidgetComponent {
   newsdata:any;
   
   constructor(private ApiService:ApiService) {
-    this.callData();
+    this.callData(); 
+    this.callNewsData();
   }
+
   callData(){
     this.ApiService.getCategory().subscribe((results:any)=>{
-    console.log(results);
-    if(results.resultnum>0){
-        this.catdata=results.results 
-        this.newsdata=results.news 
-        console.log(this.catdata)
-    }
+      console.log(results.data); 
+      this.catdata=results.data;
     })
   }
+  
+  callNewsData(){
+    this.ApiService.getLastestNews().subscribe((results:any)=>{ 
+      this.newsdata=results.data  
+    })
+  }
+  
 }

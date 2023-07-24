@@ -10,8 +10,8 @@
         <h3 class="widget-title"><span>หมวดหมู่</span></h3>
         <ul>
             <li *ngFor="let content of catdata;">
-                <a routerLink="/news/{{content.name}}/1/{{content.show}}">
-                    {{content.show}} <span class="count"></span>
+                <a routerLink="/news/{{content.attributes.name}}/1/{{content.attributes.show}}">
+                    {{content.attributes.show}} <span class="count"></span>
                 </a>
             </li> 
         </ul>
@@ -20,15 +20,15 @@
         <h3 class="widget-title"><span>ข่าวกิจกรรมล่าสุด</span></h3>
         <article class="item"  *ngFor="let content of newsdata;">
             <a routerLink="/blog-details" class="thumb">
-                <img [src]=content.imageurl alt="{{content.title}}">
+                <img [src]=content.attributes.imageurl alt="{{content.attributes.title}}">
             </a>
             <div class="info">
                 <h4 class="title">
-                    <a routerLink="/news-details/{{content.id}}/{{content.title}}">
-                        {{content.title}}
+                    <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}">
+                        {{content.attributes.title}}
                     </a>
                 </h4>
-                <span class="date">{{content.newsdatetime}}</span>
+                <span class="date">{{content.attributes.newsdatetime}}</span>
             </div>
         </article> 
     </div>

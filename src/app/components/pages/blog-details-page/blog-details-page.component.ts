@@ -9,8 +9,8 @@ import { ApiService } from 'src/app/api.service';
 })
 export class BlogDetailsPageComponent {
   newsid:any;
-  newsname:any;
-  newsdata:any;
+  newsname:any; 
+  content:any;
   constructor(private activeRoute: ActivatedRoute, public ApiService:ApiService) {
     this.activeRoute.params.subscribe((routeParams:any) => { 
       this.newsid=routeParams.id; 
@@ -19,12 +19,9 @@ export class BlogDetailsPageComponent {
     }); 
   }
   
-  callData(newsid:any){
-    this.ApiService.getNewsdetail(newsid).subscribe((results:any)=>{
-    console.log(results);
-    if(results.resultnum>0){
-        this.newsdata=results.results  
-    }
+  callData(newsid:any){ 
+    this.ApiService.getNewsdetail(newsid).subscribe((results:any)=>{ 
+      this.content=results.data  
     })
   }
 }

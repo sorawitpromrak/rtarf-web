@@ -19,10 +19,8 @@ export class PartnerComponent {
     callData(){
         this.serviceData=[];
         this.ApiService.getServices().subscribe((results:any)=>{
-        console.log(results);
-            if(results.resultnum>0){
-                this.serviceData=results.results;
-            }
+            console.log(results.data);
+            this.serviceData=results.data; 
         })
       }
 }
