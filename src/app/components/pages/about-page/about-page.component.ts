@@ -21,18 +21,24 @@ export class AboutPageComponent {
   
   callData(){
     this.serviceData=[];
-    this.ApiService.getServices().subscribe((results:any)=>{
+    
+    if(this.pagename=='who-we-are'){
+      this.ApiService.getWhoweareServices().subscribe((results:any)=>{
         console.log(results.data);
-        this.allService=results.data; 
-        if(this.pagename=='who-we-are'){
-          this.serviceData=this.allService.find((item:any) => item.forwhoweare);
-        }
-        if(this.pagename=='for-soldiers'){
-          this.serviceData=this.allService.find((item:any) => item.forsoldiers);
-        }
-        if(this.pagename=='for-people'){
-          this.serviceData=this.allService.find((item:any) => item.forpeople);
-        }
-    })
+        this.serviceData=results.data; 
+      })
+    }
+    if(this.pagename=='for-soldiers'){
+      this.ApiService.getSoldiersServices().subscribe((results:any)=>{
+        console.log(results.data);
+        this.serviceData=results.data; 
+      })
+    }
+    if(this.pagename=='for-people'){
+      this.ApiService.getPeopleServices().subscribe((results:any)=>{
+        console.log(results.data);
+        this.serviceData=results.data; 
+      })
+    }
   }
 }

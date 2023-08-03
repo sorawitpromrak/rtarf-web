@@ -45,6 +45,24 @@ export class ApiService {
     return this.http.get(this.rootURL + '/list-services/', { headers });
   }
   
+  getHomeServices() {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-services/?filters[forhome][$eq]=true', { headers });
+  }
+  
+  getWhoweareServices() {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-services/?filters[forwhoweare][$eq]=true', { headers });
+  }
+  getPeopleServices() {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-services/?filters[forpeople][$eq]=true', { headers });
+  }
+  getSoldiersServices() {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-services/?filters[forsoldiers][$eq]=true', { headers });
+  }
+
   getActivity() {
     var headers = { 'Authorization': 'Bearer '+this.token }
     var cat = 'activity'
