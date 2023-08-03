@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class PartnerComponent {
     serviceData:any;
+    allService:any;
     constructor(
         public router: Router,
         public ApiService:ApiService
@@ -20,7 +21,8 @@ export class PartnerComponent {
         this.serviceData=[];
         this.ApiService.getServices().subscribe((results:any)=>{
             console.log(results.data);
-            this.serviceData=results.data; 
+            this.allService=results.data;
+            this.serviceData=this.allService.find((item:any) => item.hone);
         })
       }
 }
