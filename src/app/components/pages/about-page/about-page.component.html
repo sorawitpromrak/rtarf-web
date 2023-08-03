@@ -6,11 +6,23 @@
     background-repeat: no-repeat;
     background-size: cover;"
 >
-    <div class="container">
+
+    <div class="container" *ngIf="pagename=='who-we-are'">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="assets/imgs/logo.png" alt="" style="max-width: 250px;">
+            </div>
+            <div class="col-md-8">
+            <h1 style="color: white;">Who We Are?</h1>
+            <p>กองบัญชาการกองทัพไทย มีหน้าที่ควบคุม อำนวยการ สั่งการ และกำกับดูแล การดำเนินงานของส่วนราชการในกองทัพไทย ในการเตรียมกำลัง การป้องกันราชอาณาจักร และการดำเนินการเกี่ยวกับการใช้กำลังทหาร ตามอำนาจหน้าที่ของกระทรวงกลาโหมให้เกิดประสิทธิภาพสูงสุด มีผู้บัญชาการทหารสูงสุด เป็นผู้บังคับบัญชารับผิดชอบ</p> 
+            </div>
+        </div>
+    </div>
+    <div class="container" *ngIf="pagename!='who-we-are'">
         <div class="page-banner-content text-center">
-            <h1 style="color: white;" *ngIf="pagename=='who-we-are'">เราคือใคร?</h1> 
-            <h1 style="color: white;" *ngIf="pagename=='for-people'">บริการสำหรับประชาชน</h1> 
-            <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">บริการสำหรับประชาชน</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='who-we-are'">Who We Are?</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='for-people'">For People</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">For Soldiers</h1> 
             <ul class="ps-0 mb-0 list-unstyled">
                 <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
                 <li class="d-inline-block position-relative" *ngIf="pagename=='who-we-are'">เราคือใคร?</li>
@@ -20,4 +32,36 @@
         </div>
     </div>
 </div> 
-<app-features></app-features>
+
+<div class="container mt-5 mb-5">
+    <div class="row align-items-center">
+       <div class="col-12">
+           <div class="partner-content">
+               <h4 class="mb-0">RTARF Information Services</h4>
+           </div>
+       </div>
+       <div class="col-12 mt-3">
+           <div class="row align-items-center">
+               <div class="col-md-3" *ngFor="let item of serviceData"> 
+                   <div style="
+                       height: 150px; 
+                       border: 3px solid white;
+                       margin: 5px;
+                       padding-top: 120px; 
+                       background-size:cover; 
+                       background-position: center center;
+                       background-image: url({{item.attributes.imageurl}});
+                   ">
+                       <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                           <a href="{{item.attributes.url}}" target="_blank" *ngIf="item.attributes.external=='1'" style="color: white;">{{item.attributes.title}}</a>
+                           <a routerLink="{{item.attributes.url}}" *ngIf="item.attributes.external=='0'" style="color: white;">{{item.attributes.title}}</a>
+                       </div>
+                   </div>
+               </div> 
+               <div class="col-12" *ngIf="serviceData.length==0">
+                    <p>ขออภัย ไม่มีข้อมูล</p> 
+               </div>
+           </div>
+       </div>
+    </div>
+</div>

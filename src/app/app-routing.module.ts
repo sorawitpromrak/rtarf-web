@@ -10,6 +10,8 @@ import { BlogDetailsPageComponent } from './components/pages/blog-details-page/b
 import { DashboardComponent } from './components/dashboard/dashboard.component'; 
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
 import { AnnouncementComponent } from './components/dashboard/announcement/announcement.component';
+import { CommanderPageComponent } from './components/pages/commander-page/commander-page.component';
+import { AgencyPageComponent } from './components/pages/agency-page/agency-page.component';
 
 const routes: Routes = [
     {path: '', component: HomeDemoOneComponent},
@@ -23,6 +25,8 @@ const routes: Routes = [
         ]
     },
     {path: 'contact', component: ContactPageComponent},
+    {path: 'commander', component: CommanderPageComponent},
+    {path: 'agency', component: AgencyPageComponent},
     {path: 'faq', component: FaqPageComponent},
     {path: 'about/:aboutname', component: AboutPageComponent},
     {path: 'news/:category/:page/:categoryname', component: BlogRightSidebarPageComponent},

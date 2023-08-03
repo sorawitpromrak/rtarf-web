@@ -25,6 +25,8 @@ import { BlogRightSidebarPageComponent } from './components/pages/blog-right-sid
 import { BlogDetailsPageComponent } from './components/pages/blog-details-page/blog-details-page.component';
 import { BlogWidgetComponent } from './components/common/blog-widget/blog-widget.component'; 
 import { DashboardComponent } from './components/dashboard/dashboard.component'; 
+import { CommanderPageComponent } from './components/pages/commander-page/commander-page.component';
+import { AgencyPageComponent } from './components/pages/agency-page/agency-page.component';
 
 @NgModule({
     declarations: [
@@ -42,6 +44,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
         TopHeaderComponent, 
         ContactPageComponent,
         AboutPageComponent,
+        CommanderPageComponent,
+        AgencyPageComponent,
         FaqPageComponent,  
         BlogRightSidebarPageComponent,
         BlogDetailsPageComponent,
