@@ -4,11 +4,14 @@
     position: relative;
     z-index: 1;
     background: {
+        color:#232B51;
+        /*
         color: var(--blackColor);
         image: url(../../../../assets/images/bg/bg1.jpg);
         position: center center;
         repeat: no-repeat;
         size: cover;
+        */
     };
     &.style-two {
         border-radius: 0;
@@ -43,11 +46,14 @@
     background-color: #f6fafb;
 
     background: {
+        color: #232B51;
+        /*
         color: var(--blackColor);
         image: url(../../../../assets/images/bg/bg1.jpg);
         position: center center;
         repeat: no-repeat;
         size: cover;
+        */
     };
     
     .col-md-6 {

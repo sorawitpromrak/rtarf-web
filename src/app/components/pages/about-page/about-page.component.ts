@@ -24,7 +24,15 @@ export class AboutPageComponent {
     this.ApiService.getServices().subscribe((results:any)=>{
         console.log(results.data);
         this.allService=results.data; 
-        this.serviceData=this.allService.find((item:any) => item.for == this.pagename);
+        if(this.pagename=='who-we-are'){
+          this.serviceData=this.allService.find((item:any) => item.forwhoweare);
+        }
+        if(this.pagename=='for-soldiers'){
+          this.serviceData=this.allService.find((item:any) => item.forsoldiers);
+        }
+        if(this.pagename=='for-people'){
+          this.serviceData=this.allService.find((item:any) => item.forpeople);
+        }
     })
   }
 }

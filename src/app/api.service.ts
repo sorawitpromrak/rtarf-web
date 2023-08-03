@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
+  
+  #rootURL = 'http://10.104.6.88:1337/api';
+  #token ='ec2e011679d08c3c7b573add21122e79af5c000d3b46ed9e2e37bc44d036fcb80b2d502aa37b754c2d300aff9c2ee38232f68a563f645c8b1c8fcfbe6f61273e2760a62933cb19cd3a237daf8776b263609f825d5a6e4b34645d6052cabdf8752924559995fdde5dd5188ba9c552ca226c3bc440daf2c7f51df6034b8568164d'
+
   rootURL = 'http://localhost:1337/api';
   token ='97f42b89e99f8488c4578d54f1408616a2e13f2beb015b0af9aa06375d4009d4e3d0a2eaec5b6240d4e420d667b184e67cbdcdce809b277afc45232b61e3533cb9ff641655effc70ee56ed98162923f8e0942ada2e49b66260e29b743cc6e957ef72a8bdbdba49481d7c390b7bff07b5696412022ba265371bfb5b9dc0c18124'
   constructor(private http: HttpClient) { }
