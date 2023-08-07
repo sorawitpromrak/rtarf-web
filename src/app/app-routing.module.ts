@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './components/common/not-found/not-found.component';
-import { HomeDemoOneComponent } from './components/pages/home-demo-one/home-demo-one.component'; 
 import { ContactPageComponent } from './components/pages/contact-page/contact-page.component';
 import { AboutPageComponent } from './components/pages/about-page/about-page.component';
 import { FaqPageComponent } from './components/pages/faq-page/faq-page.component';  
@@ -12,10 +11,11 @@ import { DetailPageComponent } from './components/pages/detail-page/detail-page.
 import { AnnouncementComponent } from './components/dashboard/announcement/announcement.component';
 import { CommanderPageComponent } from './components/pages/commander-page/commander-page.component';
 import { AgencyPageComponent } from './components/pages/agency-page/agency-page.component';
+import { HomeIntroComponent } from './components/pages/home-intro/home-intro.component';
 
 const routes: Routes = [
-    {path: '', component: HomeDemoOneComponent},
-    {path: 'index', component: HomeDemoOneComponent},
+    {path: '', component: HomeIntroComponent},
+    {path: 'index', component: HomeIntroComponent},
     {path: 'page/:pagename', component: DetailPageComponent},
     {
         path: 'service',

@@ -1,5 +1,32 @@
-<app-top-header></app-top-header>
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
-<ngx-scrolltop></ngx-scrolltop>
+<div [ngClass]="{'d-none': router.url === '/' && introdisplay}">
+    <app-top-header></app-top-header>
+    <app-navbar></app-navbar>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+    <ngx-scrolltop></ngx-scrolltop>
+</div>
+<div [ngClass]="{'d-none': router.url != '/'}">
+    <div class="container">
+        <div class="row mt-5" *ngFor="let item of intropage">
+            <div class="col-sm-12 mb-5">
+                <img src="{{item.attributes.imageurl}}" alt="" style="border-radius: 20px;">
+            </div>
+            <div class="com-sm-12 mb-5">
+                <div class="row">
+                    <div class="col-sm-2"></div>
+                    <div class="col-sm-8 text-center"> 
+                        <h2>{{item.attributes.name}}</h2>
+                        <p>{{item.attributes.detail}}</p>
+                    </div>
+                    <div class="col-sm-2"></div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-center">
+                <a href="" class="btn btn-primary btn-lg btn-block" style="width:80%">{{item.attributes.btntext}}</a>
+            </div>
+            <div class="col-sm-6 text-center">
+                <a routerLink="/index" class="btn btn-secondary btn-lg btn-block" style="width:80%">เข้าสู่เว็บไซต์</a>
+            </div>
+        </div>
+    </div>
+</div>
