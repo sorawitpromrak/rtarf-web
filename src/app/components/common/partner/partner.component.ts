@@ -22,5 +22,5 @@ export class PartnerComponent {
             console.log(results.data);
             this.serviceData=results.data;  
         })
-      }
+    }
 }

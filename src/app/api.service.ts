@@ -48,6 +48,10 @@ export class ApiService {
     var headers = { 'Authorization': 'Bearer '+this.token }
     return this.http.get(this.rootURL + '/list-intros/?filters[display][$eq]=true', { headers });
   }
+  getHome() {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-homes/?filters[display][$eq]=true', { headers });
+  }
   
   getHomeServices() {
     var headers = { 'Authorization': 'Bearer '+this.token }
