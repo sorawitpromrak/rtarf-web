@@ -11,41 +11,41 @@
             </div>
             <div class="col-12">
                 <div class="row align-items-center">
-                <swiper-container navigation="true" slides-per-view="4" speed="500" loop="true" css-mode="true"> 
-                    <swiper-slide *ngFor="let item of serviceData" style="padding:10px;"> 
-                        <div *ngIf="item.attributes.external=='0'">
-                        <a routerLink="{{item.attributes.url}}" target="_blank">
-                        <div style="
-                            height: 150px; 
-                            border: 3px solid white;
-                            margin: 5px;
-                            padding-top: 120px; 
-                            background-size:cover; 
-                            background-position: center center;
-                            background-image: url({{item.attributes.imageurl}});
-                        ">
-                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                                {{item.attributes.title}}
-                            </div>
-                        </div>
-                        </a>
-                        </div>
+                <swiper-container navigation="true" slides-per-view="4" speed="500" loop="true"> 
+                    <swiper-slide *ngFor="let item of serviceData" style="padding:10px;">  
                         <div *ngIf="item.attributes.external=='1'" >
-                        <a href="{{item.attributes.url}}" target="_blank">
-                        <div style="
-                            height: 150px; 
-                            border: 3px solid white;
-                            margin: 5px;
-                            padding-top: 120px; 
-                            background-size:cover; 
-                            background-position: center center;
-                            background-image: url({{item.attributes.imageurl}});
-                        ">
-                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                                {{item.attributes.title}}
+                            <a href="{{item.attributes.url}}" target="_blank" style="color: white;">
+                            <div style="
+                                height: 150px; 
+                                border: 3px solid white;
+                                margin: 5px;
+                                padding-top: 120px; 
+                                background-size:cover; 
+                                background-position: center center;
+                                background-image: url({{item.attributes.imageurl}});
+                            ">
+                                <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                    {{item.attributes.title}}
+                                </div>
                             </div>
+                            </a>
                         </div>
-                        </a>
+                        <div *ngIf="item.attributes.external=='0'" >
+                            <a routerLink="{{item.attributes.url}}" style="color: white;">
+                            <div style="
+                                height: 150px; 
+                                border: 3px solid white;
+                                margin: 5px;
+                                padding-top: 120px; 
+                                background-size:cover; 
+                                background-position: center center;
+                                background-image: url({{item.attributes.imageurl}});
+                            ">
+                                <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                    {{item.attributes.title}}
+                                </div>
+                            </div>
+                            </a>
                         </div>
                     </swiper-slide> 
                 </swiper-container>    

@@ -16,6 +16,17 @@ export class BlogComponent {
         public router: Router,
         public ApiService: ApiService
     ) { 
+        new Swiper('.swiper', {
+            slidesPerView: 3,
+            grid: {
+              rows: 3,
+            },
+            mousewheel: {
+              forceToAxis: true,
+            },
+            preventClicks: false,
+            preventClicksPropagation: false,
+        });
         this.callData('commander'); 
     }
     

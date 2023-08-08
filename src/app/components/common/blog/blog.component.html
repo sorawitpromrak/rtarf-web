@@ -17,17 +17,17 @@
             <h2 class="mb-0" style="color: white;">RTARF Daily Missions</h2>
         </div>
         <div class="row justify-content-center">
-            <swiper-container navigation="true" slides-per-view="3" speed="500" loop="true" css-mode="true"> 
+            <swiper-container navigation="true"  slides-per-view="3" speed="500" loop="true"> 
                 <swiper-slide *ngFor="let content of newsdata;" style="padding:10px;">
                     <div class="blog-card">
                         <div class="image">
-                            <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="d-block">
+                            <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="d-block swiper-no-swiping">
                                 <img src="{{content.attributes.imageurl}}" alt="{{content.attributes.title}}">  
                             </a>
                         </div>
                         <div class="content">
                             <h3 style="font-size: 1em;">
-                                <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" style="color:white ">
+                                <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="swiper-no-swiping" style="color:white ">
                                     {{content.attributes.title}}
                                 </a>
                             </h3>
@@ -49,7 +49,7 @@
         </div>
         
         <div class="courses-btn text-center">
-            <a routerLink="/news/activity/1/ภารกิจ-กิจกรรมทั่วไป" class="default-btn two">ดูทั้งหมด</a>
+            <a routerLink="/news/activity/1/ภารกิจ-กิจกรรมทั่วไป" class="default-btn two swiper-no-swiping">ดูทั้งหมด</a>
         </div>
     </div>
 </div>
