@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import Swiper from 'swiper';
 
 @Component({
     selector: 'app-blog',
@@ -8,13 +9,14 @@ import { ApiService } from 'src/app/api.service';
     styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent {
+    
 
     newsdata:any;
     constructor(
         public router: Router,
         public ApiService: ApiService
     ) { 
-        this.callData('commander')
+        this.callData('commander'); 
     }
     
 

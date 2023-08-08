@@ -17,40 +17,39 @@
             <h2 class="mb-0" style="color: white;">RTARF Daily Missions</h2>
         </div>
         <div class="row justify-content-center">
-            
-            <div class="col-md-3" *ngFor="let content of newsdata;">
-                <div class="blog-card">
-                    <div class="image">
-                        <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="d-block">
-                            <img src="{{content.attributes.imageurl}}" alt="{{content.attributes.title}}">  
-                        </a>
-                    </div>
-                    <div class="content">
-                        <h3 style="font-size: 1em;">
-                            <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" style="color:white ">
-                                {{content.attributes.title}}
+            <swiper-container navigation="true" slides-per-view="3" speed="500" loop="true" css-mode="true"> 
+                <swiper-slide *ngFor="let content of newsdata;" style="padding:10px;">
+                    <div class="blog-card">
+                        <div class="image">
+                            <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" class="d-block">
+                                <img src="{{content.attributes.imageurl}}" alt="{{content.attributes.title}}">  
                             </a>
-                        </h3>
+                        </div>
+                        <div class="content">
+                            <h3 style="font-size: 1em;">
+                                <a routerLink="/news-details/{{content.id}}/{{content.attributes.title}}" style="color:white ">
+                                    {{content.attributes.title}}
+                                </a>
+                            </h3>
 
-                        <ul class="meta ps-0 list-unstyled">
-                            <li class="d-inline-block position-relative">
-                                <i class='bx bx-user'></i>
-                                โดย <a href="/" style="color: white;">{{content.attributes.by}}</a>
-                            </li>
-                            <li class="d-inline-block position-relative">
-                                <i class='bx bx-calendar'></i>
-                                <span style="color: white;"> {{content.attributes.newsdatetime}}</span>
-                            </li>
-                        </ul>
+                            <ul class="meta ps-0 list-unstyled">
+                                <li class="d-inline-block position-relative">
+                                    <i class='bx bx-user'></i>
+                                    โดย <a href="/" style="color: white;">{{content.attributes.by}}</a>
+                                </li>
+                                <li class="d-inline-block position-relative">
+                                    <i class='bx bx-calendar'></i>
+                                    <span style="color: white;"> {{content.attributes.newsdatetime}}</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3"></div>
-            <div class="col-md-3"></div>
+                </swiper-slide> 
+            </swiper-container> 
         </div>
         
         <div class="courses-btn text-center">
-            <a routerLink="/news/commander/1/ภารกิจผู้บัญชาการ" class="default-btn two">ดูทั้งหมด</a>
+            <a routerLink="/news/activity/1/ภารกิจ-กิจกรรมทั่วไป" class="default-btn two">ดูทั้งหมด</a>
         </div>
     </div>
 </div>

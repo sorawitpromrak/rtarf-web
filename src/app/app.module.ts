@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,7 +27,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommanderPageComponent } from './components/pages/commander-page/commander-page.component';
 import { AgencyPageComponent } from './components/pages/agency-page/agency-page.component';
 import { HomeIntroComponent } from './components/pages/home-intro/home-intro.component';
-
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 @NgModule({
     declarations: [
         AppComponent, 
@@ -59,9 +62,10 @@ import { HomeIntroComponent } from './components/pages/home-intro/home-intro.com
         BrowserAnimationsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        NgxScrollTopModule
+        NgxScrollTopModule, 
     ],
     providers: [],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

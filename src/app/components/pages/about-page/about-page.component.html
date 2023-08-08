@@ -45,20 +45,41 @@
        <div class="col-12 mt-3">
            <div class="row align-items-center">
                <div class="col-md-3" *ngFor="let item of serviceData"> 
-                   <div style="
-                       height: 150px; 
-                       border: 3px solid white;
-                       margin: 5px;
-                       padding-top: 120px; 
-                       background-size:cover; 
-                       background-position: center center;
-                       background-image: url({{item.attributes.imageurl}});
-                   ">
-                       <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                           <a href="{{item.attributes.url}}" target="_blank" *ngIf="item.attributes.external=='1'" style="color: white;">{{item.attributes.title}}</a>
-                           <a routerLink="{{item.attributes.url}}" *ngIf="item.attributes.external=='0'" style="color: white;">{{item.attributes.title}}</a>
-                       </div>
-                   </div>
+                <div *ngIf="item.attributes.external=='1'" >
+                    <a href="{{item.attributes.url}}" target="_blank" style="color: white;">
+                    <div style="
+                        height: 150px; 
+                        border: 3px solid white;
+                        margin: 5px;
+                        padding-top: 120px; 
+                        background-size:cover; 
+                        background-position: center center;
+                        background-image: url({{item.attributes.imageurl}});
+                    ">
+                        <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                            {{item.attributes.title}}
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div *ngIf="item.attributes.external=='0'" >
+                    <a routerLink="{{item.attributes.url}}" style="color: white;">
+                    <div style="
+                        height: 150px; 
+                        border: 3px solid white;
+                        margin: 5px;
+                        padding-top: 120px; 
+                        background-size:cover; 
+                        background-position: center center;
+                        background-image: url({{item.attributes.imageurl}});
+                    ">
+                        <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                            {{item.attributes.title}}
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
                </div> 
                <div class="col-12" *ngIf="serviceData.length==0">
                     <p>ขออภัย ไม่มีข้อมูล</p> 

@@ -1,7 +1,7 @@
 <div
     class="partner-area bg-f7f7f7 pt-100 pb-75"
     [ngClass]="{'d-none': router.url === '/index-3'}"
->
+>  
     <div class="container">
          <div class="row align-items-center">
             <div class="col-12">
@@ -11,7 +11,10 @@
             </div>
             <div class="col-12">
                 <div class="row align-items-center">
-                    <div class="col-md-3" *ngFor="let item of serviceData"> 
+                <swiper-container navigation="true" slides-per-view="4" speed="500" loop="true" css-mode="true"> 
+                    <swiper-slide *ngFor="let item of serviceData" style="padding:10px;"> 
+                        <div *ngIf="item.attributes.external=='0'">
+                        <a routerLink="{{item.attributes.url}}" target="_blank">
                         <div style="
                             height: 150px; 
                             border: 3px solid white;
@@ -22,11 +25,30 @@
                             background-image: url({{item.attributes.imageurl}});
                         ">
                             <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                                <a href="{{item.attributes.url}}" target="_blank" *ngIf="item.attributes.external=='1'" style="color: white;">{{item.attributes.title}}</a>
-                                <a routerLink="{{item.attributes.url}}" *ngIf="item.attributes.external=='0'" style="color: white;">{{item.attributes.title}}</a>
+                                {{item.attributes.title}}
                             </div>
                         </div>
-                    </div> 
+                        </a>
+                        </div>
+                        <div *ngIf="item.attributes.external=='1'" >
+                        <a href="{{item.attributes.url}}" target="_blank">
+                        <div style="
+                            height: 150px; 
+                            border: 3px solid white;
+                            margin: 5px;
+                            padding-top: 120px; 
+                            background-size:cover; 
+                            background-position: center center;
+                            background-image: url({{item.attributes.imageurl}});
+                        ">
+                            <div style="height: 30px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                                {{item.attributes.title}}
+                            </div>
+                        </div>
+                        </a>
+                        </div>
+                    </swiper-slide> 
+                </swiper-container>    
                 </div>
             </div>
          </div>

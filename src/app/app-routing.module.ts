@@ -8,7 +8,6 @@ import { BlogRightSidebarPageComponent } from './components/pages/blog-right-sid
 import { BlogDetailsPageComponent } from './components/pages/blog-details-page/blog-details-page.component'; 
 import { DashboardComponent } from './components/dashboard/dashboard.component'; 
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
-import { AnnouncementComponent } from './components/dashboard/announcement/announcement.component';
 import { CommanderPageComponent } from './components/pages/commander-page/commander-page.component';
 import { AgencyPageComponent } from './components/pages/agency-page/agency-page.component';
 import { HomeIntroComponent } from './components/pages/home-intro/home-intro.component';
@@ -17,13 +16,7 @@ const routes: Routes = [
     {path: '', component: HomeIntroComponent},
     {path: 'index', component: HomeIntroComponent},
     {path: 'page/:pagename', component: DetailPageComponent},
-    {
-        path: 'service',
-        component: DashboardComponent,
-        children: [
-            { path: 'list/:servicename/:serviceshow', component: AnnouncementComponent }, 
-        ]
-    },
+    {path: 'service/list/:servicename/:serviceshow', component: DashboardComponent},
     {path: 'contact', component: ContactPageComponent},
     {path: 'commander', component: CommanderPageComponent},
     {path: 'agency', component: AgencyPageComponent},
@@ -36,7 +29,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
+    imports: [RouterModule.forRoot(routes, { useHash: true, scrollPositionRestoration: 'enabled' })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
