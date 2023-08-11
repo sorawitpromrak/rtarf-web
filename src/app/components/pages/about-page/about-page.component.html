@@ -1,4 +1,67 @@
 <!-- Page Banner -->
+<div class="banner-area position-relative z-1" 
+    style="
+    background-color: #232B51; 
+    background-image:url('assets/imgs/sfp-banner.jpg'); 
+    background-size:cover; 
+    background-position: center center; 
+    min-height: 600px;
+    z-index:10
+    " 
+    *ngIf="pagename=='for-people'"
+    >
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+        </div>
+    </div> 
+</div> 
+
+<div class="banner-area position-relative z-1" 
+    style="
+    background-color: #232B51; 
+    background-image:url('assets/imgs/sf-banner.jpg'); 
+    background-size:cover; 
+    background-position: center center; 
+    min-height: 600px;
+    z-index:10
+    " 
+    *ngIf="pagename=='for-soldiers'"
+    >
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+        </div>
+    </div> 
+</div> 
+
+
+<div class="banner-area position-relative z-1" 
+    style="
+    background-color: #232B51; 
+    background-image:url('assets/imgs/wwa-banner.jpg'); 
+    background-size:cover; 
+    background-position: center center; 
+    min-height: 600px;
+    z-index:10
+    " 
+    *ngIf="pagename=='who-we-are'"
+    >
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+            <div class="col-lg-6 col-md-12"> 
+            </div>
+        </div>
+    </div> 
+</div> 
 <div
     class="page-banner-area ptb-100"
     style="
@@ -23,7 +86,7 @@
     <div class="container" *ngIf="pagename!='who-we-are'">
         <div class="page-banner-content text-center">
             <h1 style="color: white;" *ngIf="pagename=='who-we-are'">Who We Are?</h1> 
-            <h1 style="color: white;" *ngIf="pagename=='for-people'">For People</h1> 
+            <h1 style="color: white;" *ngIf="pagename=='for-people'">Information Service for People</h1> 
             <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">For Soldiers</h1> 
             <ul class="ps-0 mb-0 list-unstyled">
                 <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
@@ -32,14 +95,313 @@
                 <li class="d-inline-block position-relative" *ngIf="pagename=='who-soldiers'">บริการสำหรับทหาร</li>
             </ul>
         </div>
+        <div class="row mt-3"  *ngIf="pagename=='for-people'">
+            <div class="col-md-4">
+                <a routerLink="/service/list/apply/ประกาศรับสมัคร" style="color: white;">
+                <div style="
+                    height: 250px; 
+                    border: 3px solid orange;
+                    margin: 5px;
+                    padding-top: 150px; 
+                    background-size:cover; 
+                    background-position: center center;
+                    background-image: url(assets/imgs/sfp-bt1.jpg);
+                ">
+                    <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                        <div>ข่าวรับสมัคร</div>
+                        <div class="mt-2">
+                           <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            
+            <div class="col-md-4">
+                <a routerLink="/service/list/doc/บริการแบบฟอร์ม" style="color: white;">
+                <div style="
+                    height: 250px; 
+                    border: 3px solid orange;
+                    margin: 5px;
+                    padding-top: 150px; 
+                    background-size:cover; 
+                    background-position: center center;
+                    background-image: url(assets/imgs/sfp-bt2.jpg);
+                ">
+                    <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                        <div>บริการแบบฟอร์ม</div>
+                        <div class="mt-2">
+                           <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+            
+            <div class="col-md-4">
+                <a href="http://infocenter.rtarf.mi.th/" target="_blank" style="color: white;">
+                <div style="
+                    height: 250px; 
+                    border: 3px solid orange;
+                    margin: 5px;
+                    padding-top: 150px; 
+                    background-size:cover; 
+                    background-position: center center;
+                    background-image: url(assets/imgs/sfp-bt3.jpg);
+                ">
+                    <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                        <div>ศูนย์ข้อมูลข่าวสาร บก.ทท.</div>
+                        <div class="mt-2">
+                           <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
     </div>
 </div> 
+
+<div class="container" *ngIf="pagename!='who-we-are'">
+    <div class="page-banner-content text-center">
+        <h1 style="color: white;" *ngIf="pagename=='who-we-are'">Who We Are?</h1> 
+        <h1 style="color: white;" *ngIf="pagename=='for-people'">Information Service for People</h1> 
+        <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">For Soldiers</h1> 
+        <ul class="ps-0 mb-0 list-unstyled">
+            <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
+            <li class="d-inline-block position-relative" *ngIf="pagename=='who-we-are'">เราคือใคร?</li>
+            <li class="d-inline-block position-relative" *ngIf="pagename=='for-people'">บริการสำหรับประชาชน</li>
+            <li class="d-inline-block position-relative" *ngIf="pagename=='who-soldiers'">บริการสำหรับทหาร</li>
+        </ul>
+    </div>
+    <div class="row mt-3"  *ngIf="pagename=='for-people'">
+        <div class="col-md-4">
+            <a routerLink="/service/list/apply/ประกาศรับสมัคร" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sfp-bt1.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ข่าวรับสมัคร</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a routerLink="/service/list/doc/บริการแบบฟอร์ม" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sfp-bt2.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>บริการแบบฟอร์ม</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a routerLink="/service/list/apply/ประกาศรับสมัคร" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sfp-bt3.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ศูนย์ข้อมูลข่าวสาร บก.ทท.</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="pagename=='who-we-are'">
+<div class="row mt-5"> 
+    <div class="col-12">
+        <div class="partner-content">
+            <h4 class="mb-0">Royal Thai Armed Forces Headquarters</h4>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-md-4 mt">
+        <a routerLink="/commander" style="color: white;">
+        <div style="
+            height: 250px; 
+            border: 3px solid orange;
+            margin: 5px;
+            padding-top: 150px; 
+            background-size:cover; 
+            background-position: center center;
+            background-image: url(assets/imgs/01.jpg);
+        ">
+            <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                <div>คณะผู้บังคับบัญชา</div>
+                <div>Commanders</div>
+                <div class="mt-2">
+                   <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+    
+    <div class="col-md-4">
+        <a routerLink="/page/commander-policy" style="color: white;">
+        <div style="
+            height: 250px; 
+            border: 3px solid orange;
+            margin: 5px;
+            padding-top: 150px; 
+            background-size:cover; 
+            background-position: center center;
+            background-image: url(assets/imgs/02.jpg);
+        ">
+            <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                <div>นโยบายผู้บัญชาการทหารสูงสุด</div>
+                <div>Commander Policy</div>
+                <div class="mt-2">
+                   <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+    
+    <div class="col-md-4">
+        <a routerLink="/agency" style="color: white;">
+        <div style="
+            height: 250px; 
+            border: 3px solid orange;
+            margin: 5px;
+            padding-top: 150px; 
+            background-size:cover; 
+            background-position: center center;
+            background-image: url(assets/imgs/03.jpg);
+        ">
+            <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                <div>ส่วนราชการใน บก.ทท.</div>
+                <div>Divisions</div>
+                <div class="mt-2">
+                   <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="container" *ngIf="pagename=='who-we-are'">
+    <div class="row mt-5"> 
+        <div class="col-12">
+            <div class="partner-content">
+                <h4 class="mb-0">Royal Thai Armed Forces Headquarters</h4>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4 mt">
+            <a routerLink="/news/activity/1/ภารกิจ-กิจกรรมทั่วไป" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/001.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ภารกิจ/กิจกรรม</div>
+                    <div>ทั่วไป</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a routerLink="/news/people/1/ภารกิจกิจช่วยเหลือประชาชน" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/002.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ภารกิจช่วยเหลือ</div>
+                    <div>ประชาชน</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a routerLink="/news/commander/1/ภารกิจสร้างความร่วมมือกับมิตรประเทศ" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/003.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ภารกิจสร้างความร่วมมือ</div>
+                    <div>กับมิตรประเทศ</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+</div>
+    
+
+
+
 
 <div class="container mt-5 mb-5">
     <div class="row align-items-center">
        <div class="col-12">
            <div class="partner-content">
-               <h4 class="mb-0">RTARF Information Services</h4>
+               <h4 class="mb-0">Other Services</h4>
            </div>
        </div>
        <div class="col-12 mt-3">

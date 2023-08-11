@@ -6,7 +6,7 @@
     <ngx-scrolltop></ngx-scrolltop>
 </div>
 <div [ngClass]="{'d-none': router.url != '/'}">
-    <div class="container">
+    <div class="container mb-5">
         <div class="row mt-5" *ngFor="let item of intropage">
             <div class="col-sm-12 mb-5">
                 <img src="{{item.attributes.imageurl}}" alt="" style="border-radius: 20px;">
