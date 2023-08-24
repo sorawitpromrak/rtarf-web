@@ -17,7 +17,7 @@ export class AppComponent {
     
     callHomeData(){
       this.ApiService.getIntro().subscribe((results:any)=>{
-          console.log(results); 
+          //console.log(results); 
           this.intropage=results.data 
           if(results.data.length>0){
             this.introdisplay=true

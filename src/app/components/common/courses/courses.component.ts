@@ -10,12 +10,18 @@ import { ApiService } from 'src/app/api.service';
 export class CoursesComponent {
     newsData:any;
     docsData:any;
+    announcementDocs:any;
+    budgetDocs:any;
+    infoDocs:any;
+    journalDocs:any;
+    videoDocs:any;
+
     constructor(
         public router: Router,
         public ApiService: ApiService
     ) { 
         this.callData();
-        this.callDoc();
+        this.callDoc('announcement');
     }
 
     // for tab click event
@@ -38,16 +44,41 @@ export class CoursesComponent {
     callData(){
         this.newsData=[];
         this.ApiService.getActivity().subscribe((results:any)=>{
-            console.log(results);
+            //console.log(results);
             this.newsData=results.data; 
         })
     }
     
-    callDoc(){
-        this.docsData=[];
-        this.ApiService.getDocs().subscribe((results:any)=>{
-            console.log(results);
-            this.docsData=results.data;
-        })
+    callDoc(type:string){
+        this.announcementDocs=[];
+        this.ApiService.getDocsCategory('announcement', 5).subscribe((results:any)=>{
+            //console.log(results);
+            this.announcementDocs=results.data;
+        });
+        
+        this.budgetDocs=[];
+        this.ApiService.getDocsCategory('budget', 5).subscribe((results:any)=>{
+            //console.log(results);
+            this.budgetDocs=results.data;
+        });
+        
+        this.infoDocs=[];
+        this.ApiService.getDocsCategory('infographic', 5).subscribe((results:any)=>{
+            //console.log(results);
+            this.infoDocs=results.data;
+        });
+        
+        this.journalDocs=[];
+        this.ApiService.getDocsCategory('journal', 5).subscribe((results:any)=>{
+            //console.log(results);
+            this.journalDocs=results.data;
+        });
+
+        this.videoDocs=[];
+        this.ApiService.getDocsCategory('video', 5).subscribe((results:any)=>{
+            //console.log(results);
+            this.videoDocs=results.data;
+        });
+        
     }
 }

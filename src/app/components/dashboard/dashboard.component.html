@@ -27,52 +27,79 @@
          
     <div class="container">
         <div class="courses-tabs">
+            <h2 class="">บริการประชาชน/ข้อมูลข่าวสาร</h2>
             <div class="d-lg-flex align-items-center justify-content-between">
                 <div class="section-title">
-                    <h2 class="mb-0">บริการประชาชน/ข้อมูลข่าวสาร</h2>
+                    
                 </div>
-                <ul class="nav nav-tabs d-block border-0"> 
+                <ul class="nav nav-tabs d-block border-0">
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab1'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab1')">
-                            ข่าว ประกาศ คำสั่ง
+                            ประกาศ/คำสั่ง
+                        </button>
+                    </li>
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab0'}">
+                        <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab0')">
+                            ข่าวรับสมัคร
                         </button>
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab2'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab2')">
-                            ข่าวรับสมัคร
+                            จัดซื้อจัดจ้าง
+                        </button>
+                    </li>
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab6'}">
+                        <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab6')">
+                            แบบฟอร์ม
                         </button>
                     </li>
                     <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab3'}">
                         <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab3')">
-                            จัดซื้อจัดจ้าง
+                            ภาพอินโฟกราฟิก
                         </button>
                     </li>
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab4'}">
+                        <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab4')">
+                            วารสารกองทัพไทย
+                        </button>
+                    </li> 
+                    <li class="nav-item d-inline-block" [ngClass]="{'active': currentTab === 'tab5'}">
+                        <button type="button" class="nav-link shadow-none border-0 mb-0 rounded-0" (click)="switchTab($event, 'tab5')">
+                            วีดีทัศน์
+                        </button>
+                    </li> 
                 </ul>
             </div>
-            <div class="tab-content"> 
-                <div class="tab-pane fade" id="tab1" *ngIf="currentTab === 'tab1'"> 
+            <div class="tab-content">
+                 
+                <div class="tab-pane fade" id="tab0" *ngIf="currentTab === 'tab0'"> 
                     <div class="courses-table mt-3">
                         <div class="table-responsive">
                             <table class="table align-middle">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ชื่อเอกสารข่าวประกาศ</th>
-                                        <th scope="col">วันที่</th>
-                                        <th scope="col" width="250" style="text-align: center;">รายละเอียด</th>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อเอกสารข่าวรับสมัคร</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
                                     </tr>
                                 </thead>
-                                <tbody *ngFor="let content of docsData;">  
-                                    <tr *ngIf="content.attributes.category=='announcement'">
-                                        <th scope="row">
+                                <tbody *ngFor="let content of applyDocs;">  
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
                                             <a href="{{content.attributes.docurl}}" target="_blank">
                                                {{content.attributes.title}}
                                             </a>
-                                        </th>
+                                        </td>
                                         <td>
                                             {{content.attributes.docdatetime}}
                                         </td>
-                                        <td style="text-align: center;">
-                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">ดูรายละเอียด</a>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">รายละเอียด</a>
                                         </td>
                                     </tr>  
                                 </tbody>
@@ -80,30 +107,104 @@
                         </div>
                     </div> 
                 </div>
-
+                <div class="tab-pane fade" id="tab1" *ngIf="currentTab === 'tab1'"> 
+                    <div class="courses-table mt-3">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อเอกสารข่าวประกาศ</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let content of announcementDocs;">  
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
+                                            <a href="{{content.attributes.docurl}}" target="_blank">
+                                               {{content.attributes.title}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{content.attributes.docdatetime}}
+                                        </td>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">รายละเอียด</a>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
                 <div class="tab-pane fade" id="tab2" *ngIf="currentTab === 'tab2'"> 
                     <div class="courses-table mt-3">
                         <div class="table-responsive">
                             <table class="table align-middle">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ชื่อเอกสารข่าวประกาศ</th>
-                                        <th scope="col">วันที่</th>
-                                        <th scope="col" width="250" style="text-align: center;">รายละเอียด</th>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อเอกสารจัดซื้อจัดจ้าง</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
                                     </tr>
                                 </thead> 
-                                <tbody  *ngFor="let content of docsData;">   
-                                    <tr *ngIf="content.attributes.category=='apply'">
-                                        <th scope="row">
+                                <tbody *ngFor="let content of budgetDocs;">   
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
                                             <a href="{{content.attributes.docurl}}" target="_blank">
                                                {{content.attributes.title}}
                                             </a>
-                                        </th>
+                                        </td>
                                         <td>
                                             {{content.attributes.docdatetime}}
                                         </td>
-                                        <td style="text-align: center;">
-                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">ดูรายละเอียด</a>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">รายละเอียด</a>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+                <div class="tab-pane fade" id="tab6" *ngIf="currentTab === 'tab6'"> 
+                    <div class="courses-table mt-3">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อแบบฟอร์ม</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
+                                    </tr>
+                                </thead> 
+                                <tbody *ngFor="let content of formDocs;">   
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
+                                            <a href="{{content.attributes.docurl}}" target="_blank">
+                                               {{content.attributes.title}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{content.attributes.docdatetime}}
+                                        </td>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">รายละเอียด</a>
                                         </td>
                                     </tr>  
                                 </tbody>
@@ -117,22 +218,27 @@
                             <table class="table align-middle">
                                 <thead>
                                     <tr>
-                                        <th scope="col">ชื่อเอกสารข่าวประกาศ</th>
-                                        <th scope="col">วันที่</th>
-                                        <th scope="col" width="250" style="text-align: center;">รายละเอียด</th>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อเอกสารอินโฟกราฟิก</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
                                     </tr>
                                 </thead> 
-                                <tbody  *ngFor="let content of docsData;">  
-                                    <tr *ngIf="content.attributes.category=='budget'">
-                                        <th scope="row">
+                                <tbody  *ngFor="let content of infoDocs;">  
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
                                             <a href="{{content.attributes.docurl}}" target="_blank">
                                                {{content.attributes.title}}
                                             </a>
-                                        </th>
+                                        </td>
                                         <td>
                                             {{content.attributes.docdatetime}}
                                         </td>
-                                        <td style="text-align: center;">
+                                        <td>
                                             <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">ดูรายละเอียด</a>
                                         </td>
                                     </tr>  
@@ -140,7 +246,81 @@
                             </table>
                         </div>
                     </div> 
-                </div> 
+                </div>
+  
+                <div class="tab-pane fade" id="tab4" *ngIf="currentTab === 'tab4'"> 
+                    <div class="courses-table mt-3">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อวารสารกองทัพไทย</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
+                                    </tr>
+                                </thead> 
+                                <tbody  *ngFor="let content of journalDocs;">  
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
+                                            <a href="{{content.attributes.docurl}}" target="_blank">
+                                               {{content.attributes.title}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{content.attributes.docdatetime}}
+                                        </td>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">ดูรายละเอียด</a>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+  
+                <div class="tab-pane fade" id="tab5" *ngIf="currentTab === 'tab5'"> 
+                    <div class="courses-table mt-3">
+                        <div class="table-responsive">
+                            <table class="table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col" width="80"></th>
+                                        <th scope="col">ชื่อวีดีทัศน์</th>
+                                        <th scope="col" width="150">วันที่</th>
+                                        <th scope="col" width="150">รายละเอียด</th>
+                                    </tr>
+                                </thead> 
+                                <tbody  *ngFor="let content of videoDocs;">  
+                                    <tr>
+                                        <td>
+                                          <img width="80" src="assets/imgs/doc.png" alt="" *ngIf="!content.attributes.thumbnailurl">  
+                                          <img width="80" [src]="content.attributes.thumbnailurl" alt="" *ngIf="content.attributes.thumbnailurl">  
+                                        </td>
+                                        <td scope="row">
+                                            <a href="{{content.attributes.docurl}}" target="_blank">
+                                               {{content.attributes.title}}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{content.attributes.docdatetime}}
+                                        </td>
+                                        <td>
+                                            <a href="{{content.attributes.docurl}}" target="_blank" class="default-btn two">ดูรายละเอียด</a>
+                                        </td>
+                                    </tr>  
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
+                </div>
+
+                 
             </div>
         </div> 
     </div>

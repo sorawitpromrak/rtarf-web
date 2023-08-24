@@ -18,7 +18,7 @@ export class HomeIntroComponent {
   callData(){
     this.homeData=[]; 
     this.ApiService.getHome().subscribe((results:any)=>{
-        console.log(results.data);
+        //console.log(results.data);
         this.homeData=results.data;
         if(results.data.length>0){
           this.homedisplay=true;

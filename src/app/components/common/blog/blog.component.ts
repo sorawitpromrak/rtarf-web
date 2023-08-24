@@ -36,7 +36,7 @@ export class BlogComponent {
         this.ApiService.getNews(cat).subscribe((results:any)=>{ 
             //console.log(results.data)
             this.newsdata=results.data; 
-            console.log(this.newsdata);
+            //console.log(this.newsdata);
         })
       }
 

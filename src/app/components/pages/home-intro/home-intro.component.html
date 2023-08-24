@@ -15,8 +15,8 @@
       </div>
       <div class="modal-body">
         <img *ngIf="data.attributes.imageurl" src="{{data.attributes.imageurl}}" style="width: 100%; border-radius:20px;">
-        <iframe *ngIf="data.attributes.youtube" width="100%" height="315" src="https://www.youtube.com/embed/5eTKo4iyFlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <p class="mt-2">{{data.attributes.detail}}</p> 
+        <iframe *ngIf="data.attributes.youtube" width="100%" height="315" [src]="data.attributes.youtube | safe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <p class="mt-2">{{data.attributes.youtube}}-{{data.attributes.detail}}</p> 
       </div>
       <div class="modal-footer">
         <a *ngIf="data.attributes.detailurl" href="{{data.attributes.detailurl}}" target="_blank" class="btn btn-success"> รายละเอียดเพิ่มเติม</a>

@@ -29,17 +29,23 @@ export class ApiService {
 
   getNews(cat:any) {
     var headers = { 'Authorization': 'Bearer '+this.token }
-    return this.http.get(this.rootURL + '/list-news/?filters[category][$eq]=' + cat, { headers });
+    return this.http.get(this.rootURL + '/list-news/?filters[category][$eq]=' + cat + '&sort[1]=orderby:desc', { headers });
   }
   getLastestNews() {
     var headers = { 'Authorization': 'Bearer '+this.token }
-    return this.http.get(this.rootURL + '/list-news/?pagination[start]=0&pagination[limit]=5', { headers });  
+    return this.http.get(this.rootURL + '/list-news/?pagination[start]=0&pagination[limit]=5&sort[1]=orderby:desc', { headers });  
   }
+
   getDocs() {
     var headers = { 'Authorization': 'Bearer '+this.token }
     return this.http.get(this.rootURL + '/list-docs/', { headers });
   }
   
+  getDocsCategory(cat:string, limit:number) {
+    var headers = { 'Authorization': 'Bearer '+this.token }
+    return this.http.get(this.rootURL + '/list-docs/?filters[category][$eq]=' + cat + '&pagination[start]=0&pagination[limit]='+limit+'&sort[1]=orderby:desc', { headers });
+  }
+
   getServices() {
     var headers = { 'Authorization': 'Bearer '+this.token }
     return this.http.get(this.rootURL + '/list-services/', { headers });
@@ -74,7 +80,7 @@ export class ApiService {
   getActivity() {
     var headers = { 'Authorization': 'Bearer '+this.token }
     var cat = 'activity'
-    return this.http.get(this.rootURL + '/list-news/?filters[category][$eq]='+cat+'&pagination[start]=0&pagination[limit]=4', { headers });
+    return this.http.get(this.rootURL + '/list-news/?filters[category][$eq]='+cat+'&pagination[start]=0&pagination[limit]=4&sort[1]=orderby:desc', { headers });
   }
 
   getNewsdetail(id:any) {

@@ -19,7 +19,7 @@ export class PartnerComponent {
     callData(){
         this.serviceData=[]; 
         this.ApiService.getHomeServices().subscribe((results:any)=>{
-            console.log(results.data);
+            //console.log(results.data);
             this.serviceData=results.data;  
         })
     }

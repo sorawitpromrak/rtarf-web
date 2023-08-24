@@ -14,6 +14,14 @@ export class DashboardComponent {
     docsData:any; 
     currentTab = 'tab1';
 
+    announcementDocs:any;
+    budgetDocs:any;
+    infoDocs:any;
+    journalDocs:any;
+    videoDocs:any;
+    applyDocs:any;
+    formDocs:any;
+
     constructor(
         public router: Router,
         public activeRoute:ActivatedRoute,
@@ -31,7 +39,7 @@ export class DashboardComponent {
             if(this.servicename=='budget'){ 
                 this.currentTab = 'tab3';
             }
-            this.callDoc();
+            this.callDoc('announcement');
         }); 
     }
 
@@ -41,11 +49,47 @@ export class DashboardComponent {
         this.currentTab = tab;
     }
 
-    callDoc(){
-        this.docsData=[];
-        this.ApiService.getDocs().subscribe((results:any)=>{
-            console.log(results);
-            this.docsData=results.data;
-        })
+
+    callDoc(type:string){
+        this.announcementDocs=[];
+        this.ApiService.getDocsCategory('announcement', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.announcementDocs=results.data;
+        });
+        
+        this.budgetDocs=[];
+        this.ApiService.getDocsCategory('budget', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.budgetDocs=results.data;
+        });
+        
+        this.infoDocs=[];
+        this.ApiService.getDocsCategory('infographic', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.infoDocs=results.data;
+        });
+        
+        this.journalDocs=[];
+        this.ApiService.getDocsCategory('journal', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.journalDocs=results.data;
+        });
+
+        this.videoDocs=[];
+        this.ApiService.getDocsCategory('video', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.videoDocs=results.data;
+        });
+
+        this.applyDocs=[];
+        this.ApiService.getDocsCategory('apply', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.applyDocs=results.data;
+        });
+        this.formDocs=[];
+        this.ApiService.getDocsCategory('form', 20).subscribe((results:any)=>{
+            //console.log(results);
+            this.formDocs=results.data;
+        });
     }
 }

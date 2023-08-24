@@ -29,6 +29,7 @@ import { AgencyPageComponent } from './components/pages/agency-page/agency-page.
 import { HomeIntroComponent } from './components/pages/home-intro/home-intro.component';
 // import function to register Swiper custom elements
 import { register } from 'swiper/element/bundle';
+import { SafePipe } from './safe.pipe';
 // register Swiper custom elements
 register();
 @NgModule({
@@ -53,7 +54,7 @@ register();
         BlogRightSidebarPageComponent,
         BlogDetailsPageComponent,
         BlogWidgetComponent, 
-        DashboardComponent, 
+        DashboardComponent, SafePipe, 
     ],
     imports: [
         BrowserModule,
