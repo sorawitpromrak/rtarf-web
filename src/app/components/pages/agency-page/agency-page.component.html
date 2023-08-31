@@ -29,66 +29,211 @@
                <h4 class="mb-0">หน่วยงานขึ้นตรง กองบัญชาการกองทัพไทย</h4>
            </div>
        </div>  
-       <div class="col-12 mt-3">
-        <div class="row align-items-center"> 
+       <div class="col-12 mt-3"> 
+        <div class="row"  style="top:0 ;"> 
             <div class="col-md-1"></div>
-            <div class="col-md-2">
+            <div class="col-md-2" style="top:0 ;">
                 <div class="box" (click)="toggle(1)">
-                    ส่วนบังคับบัญชา
+                    <span class="cursor">ส่วนบังคับบัญชา</span>
                 </div>
                 <div *ngIf="open==1">
                     <div class="box-sub">
+                        <a href="https://ohq.rtarf.mi.th/OHQ/" target="_blank">
                         สำนักกองบัญชาการ <br>
                         กองบัญชาการกองทัพไทย
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักเลขานุการ <br>
-                        กองบัญชาการกองทัพไทย
+                        <a href="https://oscsecy.rtarf.mi.th" target="_blank">
+                            สำนักเลขานุการ <br>
+                            กองบัญชาการกองทัพไทย
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักงานจเรทหาร 
+                        <a href="https://oigwp.rtarf.mi.th" target="_blank">
+                            สำนักงานจเรทหาร
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักงานตรวจสอบภายในทหาร  
+                        <a href="https://oia.rtarf.mi.th" target="_blank">
+                            สำนักงานตรวจสอบภายในทหาร
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักงานพระธรรมนูญทหาร  
+                        <a href="https://oja.rtarf.mi.th" target="_blank">
+                            สำนักงานพระธรรมนูญทหาร
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักสวัสดิการทหาร  
+                        <a href="https://oowf.rtarf.mi.th" target="_blank">
+                            สำนักสวัสดิการทหาร
+                        </a>
                     </div>
                     <div class="box-sub">
-                        สำนักยุทธโยธาทหาร  
+                        <a href="https://oce.rtarf.mi.th/RTARF-PL/" target="_blank">
+                            สำนักยุทธโยธาทหาร
+                        </a>
                     </div>
                     <div class="box-sub">
-                        ศูนย์ประสานงานโครงการอันเนื่องมาจากพระราชดำริและความมั่นคง  
+                        <a href="https://rdpscc.rtarf.mi.th" target="_blank">
+                            ศูนย์ประสานงานโครงการอันเนื่องมาจากพระราชดำริและความมั่นคง 
+                        </a>
                     </div>
                     <div class="box-sub">
-                        ศูนย์ไซเบอร์ทหาร  
+                            ศูนย์ไซเบอร์ทหาร
                     </div>
                 </div>
             </div>
             <div class="col-md-2" style="vertical-align: top;">
-                <div class="box">
-                    ส่วนเสนาธิการร่วม
+                <div class="box" (click)="toggle(2)">
+                    <span class="cursor">ส่วนเสนาธิการร่วม</span>
+                </div>
+                <div *ngIf="open==2">
+                    <div class="box-sub">
+                        <a href="https://j1.rtarf.mi.th" target="_blank">
+                            กรมกำลังพลทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://j2.rtarf.mi.th/J2RTARF/" target="_blank">
+                            กรมข่าวทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://j3.rtarf.mi.th/j3/coron.php" target="_blank">
+                            กรมยุทธการทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://j4.rtarf.mi.th" target="_blank">
+                            กรมส่งกำลังบำรุงทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://j5.rtarf.mi.th/" target="_blank">
+                            กรมกิจการพลเรือนทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://j6inter.rtarf.mi.th" target="_blank">
+                            กรมการสื่อสารทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://ocg.rtarf.mi.th/web/" target="_blank">
+                            สำนักงานปลัดบัญชีทหาร
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="box">
-                    ส่วนกิจการพิเศษ
+                <div class="box" (click)="toggle(3)">
+                    <span class="cursor">ส่วนกิจการพิเศษ</span>
+                </div>
+                <div *ngIf="open==3">
+                    <div class="box-sub">
+                        <a href="https://dag.rtarf.mi.th" target="_blank">
+                            กรมสารบรรณทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://findinter.rtarf.mi.th" target="_blank">
+                            กรมการเงินทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="http://www.rtsd.mi.th/" target="_blank">
+                            กรมแผนที่ทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="http://ssd.rtarf.mi.th/" target="_blank">
+                             กรมยุทธบริการทหาร
+                        </a>
+                    
+                    </div>
+                    <div class="box-sub">
+                        <a href="http://medo.rtarf.mi.th/" target="_blank">
+                            สำนักงานแพทย์ทหาร
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="http://tncbcc.rtarf.mi.th/new/" target="_blank">
+                            กรมกิจการชายแดนทหาร
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="col-md-2">
-                <div class="box">
-                    ส่วนปฏิบัติการ
+                <div class="box" (click)="toggle(4)">
+                    <span class="cursor">ส่วนปฏิบัติการ</span>
+                </div>
+                <div *ngIf="open==4">
+                    <div class="box-sub">
+                        <a href="https://afdc.rtarf.mi.th/" target="_blank">
+                            หน่วยบัญชาการทหารพัฒนา
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="https://afsc.rtarf.mi.th/" target="_blank">
+                            ศูนย์รักษาความปลอดภัย
+                        </a>
+                    </div>
+                    <div class="box-sub">
+                        <a href="http://ctoc.rtarf.mi.th/index.html" target="_blank">
+                            ศูนย์ปฏิบัติการต่อต้านการก่อการร้ายสากล
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-2">
-                <div class="box">
-                    ส่วนการศึกษา
+            <div class="col-md-2" style="vertical-align: text-top;">
+                <div class="box" (click)="toggle(5)">
+                    <span class="cursor">ส่วนการศึกษา</span>
+                </div>
+                <div *ngIf="open==5">
+                    <div class="box-sub">
+                        <a href="https://ndsi.rtarf.mi.th/dev201709/re-index.php" target="_blank">
+                            สถาบันวิชาการป้องกันประเทศ
+                        </a>
+                        
+                    </div>
+                        <div class="box-sub">
+                            <a href="http://www.thaindc.org/" target="_blank">
+                                วิทยาลัยป้องกันราชอาณาจักร
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="https://jwc.rtarf.mi.th/" target="_blank">
+                                วิทยาลัยเสนาธิการทหาร
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="http://www.sscthailand.org/" target="_blank">
+                                ศูนย์ศึกษายุทธศาสตร์
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="https://www.ispthai.ac.th/" target="_blank">
+                                สถาบันจิตวิทยาความมั่นคง
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="http://www.afaps.ac.th/" target="_blank">
+                                โรงเรียนเตรียมทหาร
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="http://www.mtts.ac.th/" target="_blank">
+                                โรงเรียนช่างฝีมือทหาร
+                            </a>
+                        </div>
+                        <div class="box-sub">
+                            <a href="http://thaiome.rtarf.mi.th/" target="_blank">
+                                สำนักการศึกษาทหาร
+                            </a>
+                        </div>
                 </div>
             </div>  
-            <div class="col-md-1"></div>
         </div> 
    </div>
     </div>
