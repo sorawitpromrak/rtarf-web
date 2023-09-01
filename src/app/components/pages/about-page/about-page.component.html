@@ -83,7 +83,7 @@
             </div>
         </div>
     </div>
-    <div class="container" *ngIf="pagename!='who-we-are'">
+    <div class="container" *ngIf="pagename!='who-we-are' ">
         <div class="page-banner-content text-center">
             <h1 style="color: white;" *ngIf="pagename=='who-we-are'">Who We Are?</h1> 
             <h1 style="color: white;" *ngIf="pagename=='for-people'">Information Service for People</h1> 
@@ -118,7 +118,7 @@
             </div>
             
             <div class="col-md-4">
-                <a routerLink="/service/list/doc/บริการแบบฟอร์ม" style="color: white;">
+                <a routerLink="http://localhost:4200/#/service/list/form/บริการแบบฟอร์ม" style="color: white;">
                 <div style="
                     height: 250px; 
                     border: 3px solid orange;
@@ -139,7 +139,7 @@
             </div>
             
             <div class="col-md-4">
-                <a href="http://infocenter.rtarf.mi.th/" target="_blank" style="color: white;">
+                <a href="https://infocenter.rtarf.mi.th" target="_blank" style="color: white;">
                 <div style="
                     height: 250px; 
                     border: 3px solid orange;
@@ -162,21 +162,14 @@
     </div>
 </div> 
 
-<div class="container" *ngIf="pagename!='who-we-are'">
-    <div class="page-banner-content text-center">
-        <h1 style="color: white;" *ngIf="pagename=='who-we-are'">Who We Are?</h1> 
-        <h1 style="color: white;" *ngIf="pagename=='for-people'">Information Service for People</h1> 
-        <h1 style="color: white;" *ngIf="pagename=='for-soldiers'">For Soldiers</h1> 
-        <ul class="ps-0 mb-0 list-unstyled">
-            <li class="d-inline-block position-relative"><a routerLink="/index">หน้าแรก</a></li>
-            <li class="d-inline-block position-relative" *ngIf="pagename=='who-we-are'">เราคือใคร?</li>
-            <li class="d-inline-block position-relative" *ngIf="pagename=='for-people'">บริการสำหรับประชาชน</li>
-            <li class="d-inline-block position-relative" *ngIf="pagename=='who-soldiers'">บริการสำหรับทหาร</li>
-        </ul>
+<div class="container mt-4" *ngIf="pagename!='who-we-are'">
+    <div class="page-banner-content text-center "> 
+        <h1 *ngIf="pagename=='for-people'">Other Service</h1> 
+        <h1 *ngIf="pagename=='for-soldiers'">Other Service</h1> 
     </div>
     <div class="row mt-3"  *ngIf="pagename=='for-people'">
         <div class="col-md-4">
-            <a routerLink="/service/list/apply/ประกาศรับสมัคร" style="color: white;">
+            <a routerLink="/page/tour" style="color: white;">
             <div style="
                 height: 250px; 
                 border: 3px solid orange;
@@ -184,10 +177,10 @@
                 padding-top: 150px; 
                 background-size:cover; 
                 background-position: center center;
-                background-image: url(assets/imgs/sfp-bt1.jpg);
+                background-image: url(assets/imgs/sfp-bt4.jpg);
             ">
                 <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                    <div>ข่าวรับสมัคร</div>
+                    <div>ท่องเที่ยวเขตทหาร</div>
                     <div class="mt-2">
                        <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
                     </div>
@@ -197,7 +190,7 @@
         </div>
         
         <div class="col-md-4">
-            <a routerLink="/service/list/doc/บริการแบบฟอร์ม" style="color: white;">
+            <a href=" https://ossco.rtarf.mi.th/osscocorrupt" target="_blank" style="color: white;">
             <div style="
                 height: 250px; 
                 border: 3px solid orange;
@@ -205,10 +198,10 @@
                 padding-top: 150px; 
                 background-size:cover; 
                 background-position: center center;
-                background-image: url(assets/imgs/sfp-bt2.jpg);
+                background-image: url(assets/imgs/sfp-bt5.jpg);
             ">
                 <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                    <div>บริการแบบฟอร์ม</div>
+                    <div>แจ้งเรื่องร้องเรียนและประพฤติมิชอบ</div>
                     <div class="mt-2">
                        <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
                     </div>
@@ -218,7 +211,7 @@
         </div>
         
         <div class="col-md-4">
-            <a routerLink="/service/list/apply/ประกาศรับสมัคร" style="color: white;">
+            <a href="https://oss.rtarf.mi.th/public" target="_blank" style="color: white;">
             <div style="
                 height: 250px; 
                 border: 3px solid orange;
@@ -226,10 +219,78 @@
                 padding-top: 150px; 
                 background-size:cover; 
                 background-position: center center;
-                background-image: url(assets/imgs/sfp-bt3.jpg);
+                background-image: url(assets/imgs/sfp-bt6.jpg);
             ">
                 <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
-                    <div>ศูนย์ข้อมูลข่าวสาร บก.ทท.</div>
+                    <div>ศูนย์บริการแบบเบ็ดเสร็จของ บก.ทท.
+                        One Stop Service</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    
+    <div class="row mt-3"  *ngIf="pagename=='for-soldiers'">
+        <div class="col-md-4">
+            <a href="https://rtarf2.mi.th/" target="_blank" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sf-bt01.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ระบบสารสนเทศ</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a href="https://rtarf2.mi.th/" target="_blank" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sf-bt02.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>การรักษาความมั่นคงปลอดภัย
+                        สารสนเทศ</div>
+                    <div class="mt-2">
+                       <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+        
+        <div class="col-md-4">
+            <a href="https://rtarf2.mi.th/" target="_blank" style="color: white;">
+            <div style="
+                height: 250px; 
+                border: 3px solid orange;
+                margin: 5px;
+                padding-top: 150px; 
+                background-size:cover; 
+                background-position: center center;
+                background-image: url(assets/imgs/sf-bt03.jpg);
+            ">
+                <div style="padding-top:10px; height: 100px; background-color: rgba(0, 0, 0, 0.5); text-align: center; color: white;">
+                    <div>ข่าวสารอื่น ๆ</div>
                     <div class="mt-2">
                        <div style="width: 80px; margin:0 auto; background-color:white; padding:2px 5px; border-radius:10px; color:black;"> More</div>
                     </div>
@@ -395,9 +456,9 @@
     
 
 
+<div class=" mt-5">&nbsp;</div>
 
-
-<div class="container mt-5 mb-5">
+<div class="container mb-5" *ngIf="serviceData.length>0">
     <div class="row align-items-center">
        <div class="col-12">
            <div class="partner-content">
@@ -442,10 +503,7 @@
                     </a>
                 </div>
 
-               </div> 
-               <div class="col-12" *ngIf="serviceData.length==0">
-                    <p>ขออภัย ไม่มีข้อมูล</p> 
-               </div>
+               </div>  
            </div>
        </div>
     </div>

@@ -30,14 +30,26 @@ export class DashboardComponent {
         this.activeRoute.params.subscribe((routeParams:any) => { 
             this.servicename = routeParams.servicename;
             this.serviceshow = routeParams.serviceshow;
+            if(this.servicename=='apply'){ 
+                this.currentTab = 'tab0';
+            }
             if(this.servicename=='announcement'){ 
                 this.currentTab = 'tab1';
             }
-            if(this.servicename=='apply'){ 
+            if(this.servicename=='budget'){ 
                 this.currentTab = 'tab2';
             }
-            if(this.servicename=='budget'){ 
+            if(this.servicename=='infographic'){ 
                 this.currentTab = 'tab3';
+            }
+            if(this.servicename=='form'){ 
+                this.currentTab = 'tab6';
+            }
+            if(this.servicename=='journal'){ 
+                this.currentTab = 'tab4';
+            }
+            if(this.servicename=='video'){ 
+                this.currentTab = 'tab5';
             }
             this.callDoc('announcement');
         }); 
